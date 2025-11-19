@@ -2,7 +2,7 @@
 title: "NTP DNS Resource Record"
 category: info
 
-docname: draft-yuki-ntp-dns-rr
+docname: draft-yuki-ntp-dns-rr-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
