@@ -8,8 +8,8 @@ number:
 date:
 consensus: true
 v: 3
-area: INT
-workgroup: WG Working Group
+area: "Internet"
+workgroup: "Network Time Protocols"
 keyword: internet-draft
 
 author:
