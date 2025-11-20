@@ -9,7 +9,7 @@ Expires: 24 May 2026
 
 
                         NTP DNS Resource Record
-                      draft-yuki-ntp-dns-rr-latest
+                    draft-yuki-ntp-dns-record-latest
 
 Abstract
 
