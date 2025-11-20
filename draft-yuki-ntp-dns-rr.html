@@ -1214,9 +1214,11 @@ It uses the same RDATA wire format as the SVCB RR, but its semantics are special
 <a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-example" class="section-name selfRef">example</a>
         </h3>
 <p id="section-3.1-1">The following example illustrates the presentation format of the NTP RR, showing how a server advertises support for multiple NTP protocol versions using the ntp-version SvcParamKey.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
-<p id="section-3.1-2"><code>
+<div class="alignLeft art-text artwork" id="section-3.1-2">
+<pre>
 ntp.example.com. 300 IN NTP 1 . ntp-version=4,5
-</code><a href="#section-3.1-2" class="pilcrow">¶</a></p>
+</pre><a href="#section-3.1-2" class="pilcrow">¶</a>
+</div>
 </section>
 </div>
 <div id="ntp-version-svcparams">
@@ -1226,11 +1228,13 @@ ntp.example.com. 300 IN NTP 1 . ntp-version=4,5
         </h3>
 <p id="section-3.2-1">The ntp-version SvcParamKey indicates the set of NTP protocol versions supported by the service endpoint. Its value is a comma-separated list of ASCII version identifiers. Each version identifier consists of a numeric version number, optionally followed by a hyphen and an alphanumeric label (e.g., “5-draft5”), allowing servers to indicate support for development, experimental, or otherwise distinguished variants of a protocol version.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
 <p id="section-3.2-2">ABNF:<a href="#section-3.2-2" class="pilcrow">¶</a></p>
-<p id="section-3.2-3"><code>
+<div class="alignLeft art-text artwork" id="section-3.2-3">
+<pre>
 version           = 1*DIGIT *( "-" version-label )
 version-label     = 1*( ALPHA / DIGIT )
 ntp-version-value = version *( "," version )
-</code><a href="#section-3.2-3" class="pilcrow">¶</a></p>
+</pre><a href="#section-3.2-3" class="pilcrow">¶</a>
+</div>
 <p id="section-3.2-4">The wire-format consists of one or more version identifiers, each encodedas a length-prefixed byte sequence. These length–value pairs areconcatenated to form the SvcParamValue.<a href="#section-3.2-4" class="pilcrow">¶</a></p>
 </section>
 </div>
