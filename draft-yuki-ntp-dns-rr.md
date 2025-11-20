@@ -52,20 +52,20 @@ It uses the same RDATA wire format as the SVCB RR, but its semantics are special
 ## example
 The following example illustrates the presentation format of the NTP RR, showing how a server advertises support for multiple NTP protocol versions using the ntp-version SvcParamKey.
 
-```
+~~~
 ntp.example.com. 300 IN NTP 1 . ntp-version=4,5
-```
+~~~
 
 ## ntp-version SvcParams
 The ntp-version SvcParamKey indicates the set of NTP protocol versions supported by the service endpoint. Its value is a comma-separated list of ASCII version identifiers. Each version identifier consists of a numeric version number, optionally followed by a hyphen and an alphanumeric label (e.g., “5-draft5”), allowing servers to indicate support for development, experimental, or otherwise distinguished variants of a protocol version.
 
 ABNF:
 
-```
+~~~
 version           = 1*DIGIT *( "-" version-label )
 version-label     = 1*( ALPHA / DIGIT )
 ntp-version-value = version *( "," version )
-```
+~~~
 
 The wire-format consists of one or more version identifiers, each encodedas a length-prefixed byte sequence. These length–value pairs areconcatenated to form the SvcParamValue.
 
