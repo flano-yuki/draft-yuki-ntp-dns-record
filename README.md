@@ -4,16 +4,16 @@
 
 This is the working area for the individual Internet-Draft, "NTP DNS Resource Record".
 
-* [Editor's Copy](https://flano-yuki.github.io/draft-yuki-ntp-dns-rr-/#go.draft-yuki-ntp-dns-rr.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-yuki-ntp-dns-rr)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-yuki-ntp-dns-rr)
-* [Compare Editor's Copy to Individual Draft](https://flano-yuki.github.io/draft-yuki-ntp-dns-rr-/#go.draft-yuki-ntp-dns-rr.diff)
+* [Editor's Copy](https://flano-yuki.github.io/draft-yuki-ntp-dns-record/draft-yuki-ntp-dns-record.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-yuki-ntp-dns-record)
+* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-yuki-ntp-dns-record)
+* [Compare Editor's Copy to Individual Draft](https://flano-yuki.github.io/draft-yuki-ntp-dns-record/#go.draft-yuki-ntp-dns-record.diff)
 
 
 ## Contributing
 
 See the
-[guidelines for contributions](https://github.com/flano-yuki/draft-yuki-ntp-dns-rr-/blob//CONTRIBUTING.md).
+[guidelines for contributions](https://github.com/flano-yuki/draft-yuki-ntp-dns-record/blob//CONTRIBUTING.md).
 
 The contributing file also has tips on how to make contributions, if you
 don't already know how to do that.
