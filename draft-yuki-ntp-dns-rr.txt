@@ -2,18 +2,34 @@
 
 
 
-WG Working Group                                      後藤ゆき (Y. Goto)
+Network Time Protocols                                後藤ゆき (Y. Goto)
 Internet-Draft                                               independent
-Intended status: Informational                          19 November 2025
-Expires: 23 May 2026
+Intended status: Informational                          20 November 2025
+Expires: 24 May 2026
 
 
                         NTP DNS Resource Record
-                         draft-yuki-ntp-dns-rr
+                      draft-yuki-ntp-dns-rr-latest
 
 Abstract
 
-   TODO Abstract
+   This document defines a new NTP DNS Resource Record, similar in
+   concept to the HTTPS DNS Resource Record specified in RFC 9460.
+
+   This record enables an NTP server to indicate, via DNS, the versions
+   ofthe NTP protocol it supports prior to the initiation of any NTP
+   message exchange.
+
+Discussion Venues
+
+   This note is to be removed before publishing as an RFC.
+
+   Discussion of this document takes place on the Network Time Protocols
+   Working Group mailing list (ntp@ietf.org), which is archived at
+   https://mailarchive.ietf.org/arch/browse/ntp/.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/flano-yuki/draft-yuki-ntp-dns-rr-.
 
 Status of This Memo
 
@@ -30,7 +46,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 23 May 2026.
+   This Internet-Draft will expire on 24 May 2026.
 
 Copyright Notice
 
@@ -50,15 +66,31 @@ Table of Contents
 
    1.  Introduction
    2.  Conventions and Definitions
-   3.  Security Considerations
-   4.  IANA Considerations
-   5.  Normative References
+   3.  NTP Resource Record
+     3.1.  example
+     3.2.  ntp-version SvcParams
+     3.3.  nts SvcParams
+   4.  Security Considerations
+   5.  IANA Considerations
+   6.  Normative References
    Acknowledgments
    Author's Address
 
 1.  Introduction
 
-   TODO Introduction
+   NTPv5 is currently under standardization, and there are concerns
+   regarding how clients select the NTP protocol version to use.  Even
+   if a server implements support for NTPv5, a client will ordinarily
+   initiate communication using NTPv4, assuming that NTPv4 is supported
+   by the server.  This behavior is effectively based on implicit
+   assumptions rather than explicit information, and the client has no
+   reliable mechanism to determine the server’s supported versions in
+   advance.
+
+   To address this limitation, this document defines a DNS-based
+   mechanism similar to the HTTPS Resource Record (RFC 9460).  This
+   mechanism enables a server to advertise the NTP protocol versions it
+   supports before a client initiates any NTP communication.
 
 2.  Conventions and Definitions
 
@@ -68,15 +100,52 @@ Table of Contents
    BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
-3.  Security Considerations
+3.  NTP Resource Record
 
-   TODO Security
+   The NTP Resource Record (NTP RR) is a SVCB-compatible RR type, as
+   defined in RFC 9460.  It uses the same RDATA wire format as the SVCB
+   RR, but its semantics are specialized for discovery and configuration
+   of Network Time Protocol (NTP) services.
 
-4.  IANA Considerations
+3.1.  example
 
-   This document has no IANA actions.
+   The following example illustrates the presentation format of the NTP
+   RR, showing how a server advertises support for multiple NTP protocol
+   versions using the ntp-version SvcParamKey.
 
-5.  Normative References
+   ntp.example.com. 300 IN NTP 1 . ntp-version=4,5
+
+3.2.  ntp-version SvcParams
+
+   The ntp-version SvcParamKey indicates the set of NTP protocol
+   versions supported by the service endpoint.  Its value is a comma-
+   separated list of ASCII version identifiers.  Each version identifier
+   consists of a numeric version number, optionally followed by a hyphen
+   and an alphanumeric label (e.g., “5-draft5”), allowing servers to
+   indicate support for development, experimental, or otherwise
+   distinguished variants of a protocol version.
+
+   ABNF:
+
+   version = 1*DIGIT *( "-" version-label ) version-label = 1*( ALPHA /
+   DIGIT ) ntp-version-value = version *( "," version ) The wire-format
+   consists of one or more version identifiers, each encodedas a length-
+   prefixed byte sequence.  These length–value pairs areconcatenated to
+   form the SvcParamValue.
+
+3.3.  nts SvcParams
+
+   ( Is it useful to define nts SvcParams to indicate NTS support? )
+
+4.  Security Considerations
+
+   TODO
+
+5.  IANA Considerations
+
+   TODO
+
+6.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
