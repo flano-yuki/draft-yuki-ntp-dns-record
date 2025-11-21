@@ -36,7 +36,7 @@ This record enables an NTP server to indicate, via DNS, the versions ofthe NTP p
 
 # Introduction
 
-NTPv5 is currently under standardization, and there are concerns regarding how clients select the newer NTP protocol version to use. 
+NTPv5 is currently under standardization, and there are concerns regarding how clients select the newer NTP protocol version to use.
 
 The server will drop NTP packets with unsupported versions. Even if a server implements support for NTPv5, a client will ordinarily initiate communication using NTPv4, assuming that NTPv4 is supported by the server. The server then advertises its NTPv5 support to the client using the NTPv4 reference timestamp.
 
