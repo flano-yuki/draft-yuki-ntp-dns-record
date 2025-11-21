@@ -76,6 +76,22 @@ The wire-format consists of one or more version identifiers, each encodedas a le
 ## nts SvcParams
 ( Is it useful to define nts SvcParams to indicate NTS support? )
 
+# Operational Sequence and Client Behavior
+The following list outlines the typical operational flow for deploying and using the NTP Resource Record, from server-side configuration to client-side version selection and communication.
+
+- The server operator publishes an NTP RR in the authoritative DNS zone, including the appropriate SvcParams such as ntp-version="4,5".
+- The client initiates DNS resolution for the NTP RR corresponding to the target domain name.
+- The client processes the DNS response using the rules for SVCB-compatible RR types.
+  - If the response is in AliasMode (SvcPriority = 0), the client follows the alias target and repeats resolution.
+  - If the response is in ServiceMode, the client proceeds to evaluate the associated SvcParams.
+- The client parses known SvcParams; unknown parameters are ignored.
+- If the ntp-version SvcParamKey is present, the client parses its value into a list of supported version identifiers.
+- The client determines the intersection between its locally supported NTP versions and the versions listed in the ntp-version SvcParam.
+- The client selects the highest mutually supported version and uses it as the version for the initial NTP request.
+- If no mutually supported version exists, or if the NTP RR or its parameters are malformed, the client falls back to its default behavior (typically initiating communication using NTPv4).
+- The client sends the first NTP request using the selected version.
+- The server accepts the packet if the version is supported; packets using unsupported versions are dropped according to normal NTP behavior.
+- NTP communication proceeds using the selected protocol version.
 
 # Security Considerations
 
