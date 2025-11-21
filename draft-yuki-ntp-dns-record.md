@@ -36,9 +36,13 @@ This record enables an NTP server to indicate, via DNS, the versions ofthe NTP p
 
 # Introduction
 
-NTPv5 is currently under standardization, and there are concerns regarding how clients select the NTP protocol version to use. Even if a server implements support for NTPv5, a client will ordinarily initiate communication using NTPv4, assuming that NTPv4 is supported by the server. This behavior is effectively based on implicit assumptions rather than explicit information, and the client has no reliable mechanism to determine the server’s supported versions in advance.
+NTPv5 is currently under standardization, and there are concerns regarding how clients select the newer NTP protocol version to use. 
 
-To address this limitation, this document defines a DNS-based mechanism similar to the HTTPS Resource Record (RFC 9460). This mechanism enables a server to advertise the NTP protocol versions it supports before a client initiates any NTP communication.
+The server will drop NTP packets with unsupported versions. Even if a server implements support for NTPv5, a client will ordinarily initiate communication using NTPv4, assuming that NTPv4 is supported by the server. The server then advertises its NTPv5 support to the client using the NTPv4 reference timestamp.
+
+The version of NTP used in the first request is therefore effectively based on implicit assumptions rather than explicit information, and the client has no reliable mechanism to determine the server’s supported versions in advance. This creates challenges for the deployment of future NTP protocol versions.
+
+To address this challenge, this document defines a DNS-based mechanism similar to the HTTPS Resource Record (RFC 9460). This mechanism enables a server to advertise the NTP protocol versions it supports before a client initiates any NTP communication.
 
 
 # Conventions and Definitions
