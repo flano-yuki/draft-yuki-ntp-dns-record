@@ -105,7 +105,7 @@ TODO
 
 # IANA Considerations
 
-** NTP RR Type
+## NTP RR Type
 
 TODO
 
