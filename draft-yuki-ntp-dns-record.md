@@ -21,7 +21,7 @@ author:
     email: minami.hiroy@gmail.com
 
 normative:
-  RFC9460: 
+  RFC9460:
 
 informative:
   NTPv5:
