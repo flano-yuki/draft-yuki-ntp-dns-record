@@ -111,10 +111,10 @@ Table of Contents
 
 3.  NTP Resource Record
 
-   The NTP Resource Record (NTP RR) is a SVCB-compatible RR type, as
-   defined in [RFC9460].  It uses the same RDATA wire format as the SVCB
-   RR, but its semantics are specialized for discovery and configuration
-   of Network Time Protocol (NTP) services.
+   The NTP Resource Record (RR type code TBD) is a SVCB-compatible RR
+   type, as defined in [RFC9460].  It uses the same RDATA wire format as
+   the SVCB RR, but its semantics are specialized for discovery and
+   configuration of Network Time Protocol (NTP) services.
 
 3.1.  example
 
@@ -199,6 +199,8 @@ Table of Contents
    TODO
 
 6.  IANA Considerations
+
+   ** NTP RR Type
 
    TODO
 
