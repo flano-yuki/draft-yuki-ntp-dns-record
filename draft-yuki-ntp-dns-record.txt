@@ -4,8 +4,8 @@
 
 Network Time Protocols                                後藤ゆき (Y. Goto)
 Internet-Draft                                               independent
-Intended status: Informational                          21 November 2025
-Expires: 25 May 2026
+Intended status: Informational                          23 November 2025
+Expires: 27 May 2026
 
 
                         NTP DNS Resource Record
@@ -14,7 +14,7 @@ Expires: 25 May 2026
 Abstract
 
    This document defines a new NTP DNS Resource Record, similar in
-   concept to the HTTPS DNS Resource Record specified in RFC 9460.
+   concept to the HTTPS DNS Resource Record specified in [RFC9460].
 
    This record enables an NTP server to indicate, via DNS, the versions
    ofthe NTP protocol it supports prior to the initiation of any NTP
@@ -46,7 +46,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 May 2026.
+   This Internet-Draft will expire on 27 May 2026.
 
 Copyright Notice
 
@@ -73,13 +73,15 @@ Table of Contents
    4.  Operational Sequence and Client Behavior
    5.  Security Considerations
    6.  IANA Considerations
-   7.  Normative References
+   7.  References
+     7.1.  Normative References
+     7.2.  Informative References
    Acknowledgments
    Author's Address
 
 1.  Introduction
 
-   NTPv5 is currently under standardization, and there are concerns
+   [NTPv5] is currently under standardization, and there are concerns
    regarding how clients select the newer NTP protocol version to use.
 
    The server will drop NTP packets with unsupported versions.  Even if
@@ -95,7 +97,7 @@ Table of Contents
    deployment of future NTP protocol versions.
 
    To address this challenge, this document defines a DNS-based
-   mechanism similar to the HTTPS Resource Record (RFC 9460).  This
+   mechanism similar to the HTTPS Resource Record ([RFC9460]).  This
    mechanism enables a server to advertise the NTP protocol versions it
    supports before a client initiates any NTP communication.
 
@@ -110,7 +112,7 @@ Table of Contents
 3.  NTP Resource Record
 
    The NTP Resource Record (NTP RR) is a SVCB-compatible RR type, as
-   defined in RFC 9460.  It uses the same RDATA wire format as the SVCB
+   defined in [RFC9460].  It uses the same RDATA wire format as the SVCB
    RR, but its semantics are specialized for discovery and configuration
    of Network Time Protocol (NTP) services.
 
@@ -200,7 +202,9 @@ Table of Contents
 
    TODO
 
-7.  Normative References
+7.  References
+
+7.1.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -210,6 +214,18 @@ Table of Contents
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
+   [RFC9460]  Schwartz, B., Bishop, M., and E. Nygren, "Service Binding
+              and Parameter Specification via the DNS (SVCB and HTTPS
+              Resource Records)", RFC 9460, DOI 10.17487/RFC9460,
+              November 2023, <https://www.rfc-editor.org/rfc/rfc9460>.
+
+7.2.  Informative References
+
+   [NTPv5]    "Network Time Protocol Version 5", Work in Progress,
+              Internet-Draft, draft-ietf-ntp-ntpv5-07, n.d.,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-ntp-
+              ntpv5-07>.
 
 Acknowledgments
 
