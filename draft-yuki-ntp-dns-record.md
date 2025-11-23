@@ -76,7 +76,7 @@ version-label     = 1*( ALPHA / DIGIT )
 ntp-version-value = version *( "," version )
 ~~~
 
-The wire-format consists of one or more version identifiers, each encodedas a length-prefixed byte sequence. These length–value pairs areconcatenated to form the SvcParamValue.
+The wire-format consists of one or more version identifiers, each encoded as a length-prefixed byte sequence. These length–value pairs are concatenated to form the SvcParamValue.
 
 ## nts SvcParams
 ( Is it useful to define nts SvcParams to indicate NTS support? )
