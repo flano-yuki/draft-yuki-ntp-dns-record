@@ -55,7 +55,7 @@ To address this challenge, this document defines a DNS-based mechanism similar t
 {::boilerplate bcp14-tagged}
 
 # NTP Resource Record
-The NTP Resource Record (NTP RR) is a SVCB-compatible RR type, as defined in [RFC9460].
+The NTP Resource Record (RR type code TBD) is a SVCB-compatible RR type, as defined in [RFC9460].
 It uses the same RDATA wire format as the SVCB RR, but its semantics are specialized for discovery and configuration of Network Time Protocol (NTP) services.
 
 ## example
@@ -105,8 +105,9 @@ TODO
 
 # IANA Considerations
 
-TODO
+** NTP RR Type
 
+TODO
 
 --- back
 
