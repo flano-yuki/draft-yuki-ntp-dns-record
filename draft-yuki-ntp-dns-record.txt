@@ -73,6 +73,7 @@ Table of Contents
    4.  Operational Sequence and Client Behavior
    5.  Security Considerations
    6.  IANA Considerations
+     6.1.  NTP RR Type
    7.  References
      7.1.  Normative References
      7.2.  Informative References
@@ -204,7 +205,7 @@ Table of Contents
 
 6.  IANA Considerations
 
-   ** NTP RR Type
+6.1.  NTP RR Type
 
    TODO
 
