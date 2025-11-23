@@ -1266,13 +1266,13 @@ ntp-version-value = version *( "," version )
       <h2 id="name-operational-sequence-and-cl">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-operational-sequence-and-cl" class="section-name selfRef">Operational Sequence and Client Behavior</a>
       </h2>
-<p id="section-4-1">The following list outlines the typical operational flow for deploying and using the NTP Resource Record, from server-side configuration to client-side version selection and communication.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-1">The following list outlines the typical operational flow for deploying and using the NTP Resource Record, from server-side configuration to client-side version selection and communication. In practice, clients <span class="bcp14">MAY</span> perform NTP RR resolution in parallel with their default NTP initiation behavior (typically NTPv4, or NTPv5 when configured) and use the result when available.<a href="#section-4-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-4-2.1">
           <p id="section-4-2.1.1">The server operator publishes an NTP RR in the authoritative DNS zone, including the appropriate SvcParams such as ntp-version="4,5".<a href="#section-4-2.1.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-4-2.2">
-          <p id="section-4-2.2.1">The client initiates DNS resolution for the NTP RR corresponding to the target domain name.<a href="#section-4-2.2.1" class="pilcrow">¶</a></p>
+          <p id="section-4-2.2.1">The client initiates DNS resolution for the NTP RR corresponding to the target domain name; if the NTP RR is not available, the client falls back to its default behavior (typically NTPv4).<a href="#section-4-2.2.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-4-2.3">
           <p id="section-4-2.3.1">The client processes the DNS response using the rules for SVCB-compatible RR types.<a href="#section-4-2.3.1" class="pilcrow">¶</a></p>
