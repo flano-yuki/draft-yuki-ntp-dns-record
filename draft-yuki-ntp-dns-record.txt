@@ -67,7 +67,7 @@ Table of Contents
    1.  Introduction
    2.  Conventions and Definitions
    3.  NTP Resource Record
-     3.1.  example
+     3.1.  Example
      3.2.  ntp-version SvcParams
      3.3.  nts SvcParams
    4.  Operational Sequence and Client Behavior
@@ -85,17 +85,19 @@ Table of Contents
    [NTPv5] is currently under standardization, and there are concerns
    regarding how clients select the newer NTP protocol version to use.
 
-   The server will drop NTP packets with unsupported versions.  Even if
-   a server implements support for NTPv5, a client will ordinarily
+   The server will drop NTP packets with unsupported versions.
+   Therefore, clients need to select an NTP version that the server can
+   receive; however, clients have no reliable way to know the server’s
+   supported versions in advance.  Accordingly, clients commonly
    initiate communication using NTPv4, assuming that NTPv4 is supported
-   by the server.  The server then advertises its NTPv5 support to the
-   client using the NTPv4 reference timestamp.
+   by the server, even if the server also implements NTPv5.  Servers
+   then attempt to advertise NTPv5 support using existing NTPv4 fields
+   such as the reference timestamp.
 
    The version of NTP used in the first request is therefore effectively
-   based on implicit assumptions rather than explicit information, and
-   the client has no reliable mechanism to determine the server’s
-   supported versions in advance.  This creates challenges for the
-   deployment of future NTP protocol versions.
+   based on implicit assumptions rather than explicit information.  This
+   creates challenges for the deployment of future NTP protocol
+   versions.
 
    To address this challenge, this document defines a DNS-based
    mechanism similar to the HTTPS Resource Record ([RFC9460]).  This
@@ -117,7 +119,7 @@ Table of Contents
    the SVCB RR, but its semantics are specialized for discovery and
    configuration of Network Time Protocol (NTP) services.
 
-3.1.  example
+3.1.  Example
 
    The following example illustrates the presentation format of the NTP
    RR, showing how a server advertises support for multiple NTP protocol
