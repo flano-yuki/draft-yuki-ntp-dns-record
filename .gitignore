@@ -18,7 +18,7 @@
 /versioned/
 Gemfile.lock
 archive.json
-draft-yuki-ntp-dns-rr.xml
+draft-yuki-ntp-dns-record.xml
 package-lock.json
 report.xml
 !requirements.txt
