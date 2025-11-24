@@ -91,8 +91,8 @@ Table of Contents
    supported versions in advance.  Accordingly, clients commonly
    initiate communication using NTPv4, assuming that NTPv4 is supported
    by the server, even if the server also implements NTPv5.  Servers
-   then attempt to advertise NTPv5 support using existing NTPv4 fields
-   such as the reference timestamp.
+   then attempt to advertise NTPv5 support to clients using the NTPv4
+   reference timestamp.
 
    The version of NTP used in the first request is therefore effectively
    based on implicit assumptions rather than explicit information.  This
