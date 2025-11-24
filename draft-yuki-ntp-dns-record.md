@@ -43,12 +43,11 @@ This record enables an NTP server to indicate, via DNS, the versions of the NTP 
 
 [NTPv5] is currently under standardization, and there are concerns regarding how clients select the newer NTP protocol version to use.
 
-The server will drop NTP packets with unsupported versions. Even if a server implements support for NTPv5, a client will ordinarily initiate communication using NTPv4, assuming that NTPv4 is supported by the server. The server then advertises its NTPv5 support to the client using the NTPv4 reference timestamp.
+The server will drop NTP packets with unsupported versions. Therefore, clients need to select an NTP version that the server can receive; however, clients have no reliable way to know the server’s supported versions in advance. Accordingly, clients commonly initiate communication using NTPv4, assuming that NTPv4 is supported by the server, even if the server also implements NTPv5. Servers then attempt to advertise NTPv5 support using existing NTPv4 fields such as the reference timestamp.
 
-The version of NTP used in the first request is therefore effectively based on implicit assumptions rather than explicit information, and the client has no reliable mechanism to determine the server’s supported versions in advance. This creates challenges for the deployment of future NTP protocol versions.
+The version of NTP used in the first request is therefore effectively based on implicit assumptions rather than explicit information. This creates challenges for the deployment of future NTP protocol versions.
 
 To address this challenge, this document defines a DNS-based mechanism similar to the HTTPS Resource Record ([RFC9460]). This mechanism enables a server to advertise the NTP protocol versions it supports before a client initiates any NTP communication.
-
 
 # Conventions and Definitions
 
@@ -58,7 +57,7 @@ To address this challenge, this document defines a DNS-based mechanism similar t
 The NTP Resource Record (RR type code TBD) is a SVCB-compatible RR type, as defined in [RFC9460].
 It uses the same RDATA wire format as the SVCB RR, but its semantics are specialized for discovery and configuration of Network Time Protocol (NTP) services.
 
-## example
+## Example
 The following example illustrates the presentation format of the NTP RR, showing how a server advertises support for multiple NTP protocol versions using the ntp-version SvcParamKey.
 
 ~~~
