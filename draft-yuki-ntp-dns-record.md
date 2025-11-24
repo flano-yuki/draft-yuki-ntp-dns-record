@@ -35,7 +35,7 @@ informative:
 
 This document defines a new NTP DNS Resource Record, similar in concept to the HTTPS DNS Resource Record specified in [RFC9460].
 
-This record enables an NTP server to indicate, via DNS, the versions ofthe NTP protocol it supports prior to the initiation of any NTP message exchange.
+This record enables an NTP server to indicate, via DNS, the versions of the NTP protocol it supports prior to the initiation of any NTP message exchange.
 
 --- middle
 
