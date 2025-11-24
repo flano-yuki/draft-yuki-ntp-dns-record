@@ -4,8 +4,8 @@
 
 Network Time Protocols                                後藤ゆき (Y. Goto)
 Internet-Draft                                               independent
-Intended status: Informational                          23 November 2025
-Expires: 27 May 2026
+Intended status: Informational                          24 November 2025
+Expires: 28 May 2026
 
 
                         NTP DNS Resource Record
@@ -17,7 +17,7 @@ Abstract
    concept to the HTTPS DNS Resource Record specified in [RFC9460].
 
    This record enables an NTP server to indicate, via DNS, the versions
-   ofthe NTP protocol it supports prior to the initiation of any NTP
+   of the NTP protocol it supports prior to the initiation of any NTP
    message exchange.
 
 Discussion Venues
@@ -46,7 +46,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 27 May 2026.
+   This Internet-Draft will expire on 28 May 2026.
 
 Copyright Notice
 
