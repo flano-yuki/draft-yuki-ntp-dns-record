@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-03-22T00:35:14.858954+00:00",
+  "timestamp": "2026-03-24T00:30:35.271655+00:00",
   "repo": "flano-yuki/draft-yuki-ntp-dns-record",
   "labels": [
     {
@@ -50,5 +50,32 @@
     }
   ],
   "issues": [],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOQY3SmM7MopIe",
+      "title": "Adding NTS details",
+      "url": "https://github.com/flano-yuki/draft-yuki-ntp-dns-record/pull/1",
+      "state": "OPEN",
+      "author": "signalsforgranted",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-03-23T10:17:01Z",
+      "updatedAt": "2026-03-23T10:17:02Z",
+      "baseRepository": "flano-yuki/draft-yuki-ntp-dns-record",
+      "baseRefName": "main",
+      "baseRefOid": "32d3db3b91d0bf089ec338eb91d91a2160a2a858",
+      "headRepository": "signalsforgranted/draft-yuki-ntp-dns-record",
+      "headRefName": "main",
+      "headRefOid": "ca701d87631968c7e33f20e47dab6a649e3af28e",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    }
+  ]
 }
